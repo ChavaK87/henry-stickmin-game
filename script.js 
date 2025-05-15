@@ -1,0 +1,32 @@
+const scenes = {
+  vent: {
+    image: "images/level1_vent_fail.jpg",
+    text: "Henry launches into the vent... and fries himself on the electric grid. FAIL.",
+    voice: "voices/vent_fail.mp3"
+  },
+  dig: {
+    image: "images/level1_dig_success.jpg",
+    text: "Henry finds a spork and tunnels out... It's a mess, but it works. SUCCESS!",
+    voice: "voices/dig_success.mp3"
+  },
+  guard: {
+    image: "images/level1_guard_fail.jpg",
+    text: "He calls the guard. For a hug. That goes about as well as you'd expect. FAIL.",
+    voice: "voices/guard_fail.mp3"
+  },
+  pigeon: {
+    image: "images/level1_pigeon_fail.jpg",
+    text: "The pigeon army grabs Henry... and drops him mid-flight. FAIL.",
+    voice: "voices/pigeon_fail.mp3"
+  }
+};
+
+function choose(option) {
+  const scene = scenes[option];
+  document.getElementById("scene-img").src = scene.image;
+  document.getElementById("scene-text").textContent = scene.text;
+
+  const voice = document.getElementById("voice");
+  voice.src = scene.voice;
+  voice.play();
+}
